@@ -15,12 +15,12 @@ if (!webhookSecret) {
 }
 
 function validate(req, res, next) {
-  // console.log(req.body);
+  console.log(req.body);
 
   if (req.body.type && req.body.type === 'verification') {
     console.log('verifying challenge');
     const bodyToSend = {
-      response: req.body
+      response: req.body.challenge
     };
 
     const hashToSend = crypto.createHmac('sha256', webhookSecret)
@@ -43,7 +43,8 @@ app.use(validate);
 app.get('/', (req, res) => res.send('running'));
 
 app.post('/webhook', (req, res) => {
-  res.send(req.body);
+  console.log(req.body);
+  res.status(200);
 });
 
 app.listen(3000, () => console.log('listening on port 3000'));
