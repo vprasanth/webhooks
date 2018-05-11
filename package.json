@@ -1,0 +1,19 @@
+{
+  "name": "webhooks",
+  "version": "0.0.1",
+  "description": "webhook poc",
+  "main": "index.js",
+  "scripts": {
+    "webhook": "node webhook-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Prasanth Vaaheeswaran",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "crypto": "^1.0.1",
+    "express": "^4.16.3",
+    "helmet": "^3.12.0",
+    "kafka-node": "^2.6.1"
+  }
+}
